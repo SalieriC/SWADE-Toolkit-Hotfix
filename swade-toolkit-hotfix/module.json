@@ -7,8 +7,8 @@
   "minimumCoreVersion": "0.6.0",
   "compatibleCoreVersion": "0.7.9",
   "url": "https://github.com/SalieriC/SWADE-Toolkit-Hotfix",
-  "manifest": "",
-  "download": "",
+  "manifest": "https://raw.githubusercontent.com/SalieriC/SWADE-Toolkit-Hotfix/main/swade-toolkit-hotfix/module.json?token=AAJMJWJKFQFIYFOYB5GSJGLAKMDIM",
+  "download": "https://github.com/SalieriC/SWADE-Toolkit-Hotfix/blob/main/swade-toolkit-hotfix.zip?raw=true",
   "type": "module",
   "includes": [
     "./assets/**",
