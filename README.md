@@ -1,5 +1,9 @@
 # SWADE-Toolkit-Hotfix
-A Hotfix for SWADE Toolkit until the original author returns.
+A Hotfix for SWADE Toolkit until the original author (Spacemandev) returns.  
+If you want to say thank you for the **hotfix** only you may do so using my Ko-fi:  
+[![Ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/salieric)  
+If you want to support Spacemandev for his original version of the module, you may to so here:  
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K11VCDK)  
 
 # Changelog (hotfix)  
 ### 1.1.3  
