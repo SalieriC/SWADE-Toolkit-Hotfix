@@ -63,7 +63,7 @@ class ActiveEffects {
                     let skillName = change.key.split("m!")[1];
                     let skill = actor.items.find(el => el.name == skillName && el.type == 'skill');
                     let skill_mod = skill.data.data.die.modifier;
-                    if (!skill_mod) {
+                    if (!skill_mod || skill_mod === 'NaN') {
                         skill.update({_id: skill.id, "die.modifier": skill.data.data.die.modifier = '0'});
                     }
                     if (!skill) {
