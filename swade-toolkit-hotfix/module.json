@@ -1,0 +1,43 @@
+{
+  "name": "swade-toolkit-hotfix",
+  "title": "SWADE Toolkit Hotfix",
+  "description": "<p>A collection of macros and automation API for the SWADE system. Originally created by Spacemandev, Hotfix by SalieriC.</p>",
+  "author": "spacemandev (spacemandev#6256), SalieriC",
+  "version": "1.1.3",
+  "minimumCoreVersion": "0.6.0",
+  "compatibleCoreVersion": "0.7.9",
+  "url": "https://github.com/SalieriC/SWADE-Toolkit-Hotfix",
+  "manifest": "",
+  "download": "",
+  "type": "module",
+  "includes": [
+    "./assets/**",
+    "./lang/**",
+    "./scripts/**",
+    "./styles/**",
+    "./templates/**",
+    "./module.json",
+    "./README.md",
+    "./readme_assets/"
+  ],
+  "media": [],
+  "esmodules": [
+    "scripts/macros.js",
+    "scripts/status_effects/status_effects.js",
+    "scripts/active_effects/active_effects.js"
+  ],
+  "styles": [
+    "styles/swade-toolkit.css",
+    "styles/chat/swade-toolkit-chat.css"
+  ],
+  "languages": [{
+    "lang": "en",
+    "name": "English",
+    "path": "lang/en.json"
+  },
+  {
+    "lang": "es",
+    "name": "Spanish",
+    "path": "lang/es.json"
+  }]
+}
