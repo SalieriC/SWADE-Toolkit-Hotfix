@@ -4,6 +4,7 @@ If you want to say thank you for the **hotfix** only you may do so using my Ko-f
 [![Ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/salieric)  
 If you want to support Spacemandev for his original version of the module, you may to so here:  
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K11VCDK)  
+You can find the original Version [here](https://github.com/spacemandev-git/fvtt-swade-toolkit).  
 
 # Changelog (hotfix)  
 ### 1.1.3  
