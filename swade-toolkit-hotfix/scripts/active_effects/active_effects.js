@@ -31,7 +31,7 @@ class ActiveEffects {
             if (game.userId != userId || !game.settings.get("swade-toolkit", "enableSkillsActiveEffects")) {
                 return;
             }
-            if (!effect.changes.find(el => (el.key.includes("d!") || el.key.includes("m!")))) {
+            if (!effect.changes.find(el => (el.key.includes("d!") || el.key.includes("m!") || el.key.includes("wd!")))) {
                 return;
             } //only process the AEs with d! and m!
             let effectedSkills = [];
@@ -57,6 +57,29 @@ class ActiveEffects {
                             skillIdx = effectedSkills.length - 1;
                         }
                         effectedSkills[skillIdx].data.die.sides += change.value;
+                    }
+                }
+                else if (change.key.startsWith("wd!")) {
+                    if (change.value % 2 != 0) {
+                        ui.notifications.error(game.i18n.localize("Active_Effects.Die_Must_Be_Even"));
+                        return;
+                    }
+                    let skillName = change.key.split("wd!")[1];
+                    let skill = actor.items.find(el => el.name == skillName && el.type == 'skill');
+                    if (!skill) {
+                        continue;
+                    } //no skill found
+                    if (!skill.getFlag("swade-toolkit", "active-effects")) {
+                        yield skill.setFlag("swade-toolkit", "active-effects", []);
+                    }
+                    if (!skill.getFlag("swade-toolkit", "active-effects").includes(effect._id)) { //if effect isn't already on this skill
+                        //AE Turned On
+                        let skillIdx = effectedSkills.findIndex(el => el.name == skillName && el.type == 'skill');
+                        if (skillIdx == -1) {
+                            effectedSkills.push(duplicate(skill));
+                            skillIdx = effectedSkills.length - 1;
+                        }
+                        effectedSkills[skillIdx].data.wild-die.sides + change.value;
                     }
                 }
                 else if (change.key.startsWith("m!")) {
@@ -96,7 +119,7 @@ class ActiveEffects {
             if (game.userId != userId || !game.settings.get("swade-toolkit", "enableSkillsActiveEffects")) {
                 return;
             }
-            if (!effect.changes.find(el => (el.key.includes("d!") || el.key.includes("m!")))) {
+            if (!effect.changes.find(el => (el.key.includes("d!") || el.key.includes("m!") || el.key.includes("wd!")))) {
                 return;
             } //only process the AEs with d! and m!
             let effectedSkills = [];
@@ -116,6 +139,23 @@ class ActiveEffects {
                             skillIdx = effectedSkills.length - 1;
                         }
                         effectedSkills[skillIdx].data.die.sides -= change.value;
+                    }
+                }
+                else if (change.key.startsWith("wd!")) {
+                    let skillName = change.key.split("wd!")[1];
+                    let skill = actor.items.find(el => el.name == skillName && el.type == 'skill');
+                    if (!skill) {
+                        continue;
+                    } //no skill found
+                    if (skill.getFlag("swade-toolkit", "active-effects").includes(effect._id)) {
+                        //if the skill includes this AE
+                        //AE Turned Off
+                        let skillIdx = effectedSkills.findIndex(el => el.name == skillName && el.type == 'skill');
+                        if (skillIdx == -1) {
+                            effectedSkills.push(duplicate(skill));
+                            skillIdx = effectedSkills.length - 1;
+                        }
+                        effectedSkills[skillIdx].data.wild-die.sides - change.value;
                     }
                 }
                 else if (change.key.startsWith("m!")) {
