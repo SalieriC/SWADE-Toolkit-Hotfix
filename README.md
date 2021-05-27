@@ -6,6 +6,11 @@ If you want to support Spacemandev for his original version of the module, you m
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K11VCDK)  
 You can find the original Version [here](https://github.com/spacemandev-git/fvtt-swade-toolkit).  
 
+# Installation instructions:  
+- Install **both**, SWADE Toolkit and this hotfix.  
+- Only activate the hotfix in your world **not** the original.  
+- That's all.  
+
 # Changelog (hotfix)  
 ### 1.1.3  
 - Fixed a bug that caused the skill sheet to be rendered when Active Effects on Skills were modified.  
